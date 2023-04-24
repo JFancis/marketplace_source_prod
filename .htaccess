@@ -1,8 +1,8 @@
 RewriteEngine On
 
-RewriteCond %{HTTP_HOST} ^d-themes.com$
+RewriteCond %{HTTP_HOST} ^jfancis.github.io/marketplace_source_prod$
 RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://d-themes.com/angular/molla/demo4/$1 [NC,R,L]
+RewriteRule ^(.*)$ https://jfancis.github.io/marketplace_source_prod/$1 [NC,R,L]
 
 # If an existing asset or directory is requested go to it as it is
 RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
