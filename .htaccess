@@ -1,6 +1,6 @@
 RewriteEngine On
 
-# RewriteCond %{HTTP_HOST} ^jfancis.github.io/marketplace_source_prod$
+# RewriteCond %{HTTP_HOST} ^marketplace_source_prod$
 # RewriteCond %{HTTPS} off
 # RewriteRule ^(.*)$ https://jfancis.github.io/marketplace_source_prod/$1 [NC,R,L]
 
