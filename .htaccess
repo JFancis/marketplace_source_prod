@@ -1,13 +1,11 @@
 RewriteEngine On
 
-RewriteCond %{HTTP_HOST} ^marketplace_source_prod$
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://jfancis.github.io/marketplace_source_prod/$1 [NC,R,L]
-
 # If an existing asset or directory is requested go to it as it is
-RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
-RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
-RewriteRule ^ - [L]
+    RewriteCond %{REQUEST_FILENAME} -s [OR]
+    RewriteCond %{REQUEST_FILENAME} -l [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^.*$ - [NC,L]
+    RewriteRule ^(.*) /marketplace_source_prod/index.html [NC,L]
 
 # One month for most static assets
 <filesMatch ".(css|jpg|jpeg|png|gif|js|ico|woff2|ttf|woff)$">
